@@ -1,45 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Sakayan Express</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <h1>Sakayan Express</h1>
-        <img src="lto-logo.svg" alt="Land of Transportation Logo">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sakayan Express</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <h1>Sakayan Express</h1>
+    <img src="lto-logo.svg" alt="Land of Transportation Logo">
 
-        <div class="container">
-            <div class="sidebar"></div>
-            
-            <div class="reports-section">
-                <div class="icon"></div>
-                <div class="small-icon"></div>
-                <div class="reports">Reports</div>
-            </div>
+    <div class="container">
+        <div class="sidebar"></div>
+        
+        <div class="admin">Admin Tools</div>
 
-            <div class="managefleet-section">
-                <div class="icon"></div>
-                <div class="small-icon"></div>
-                <div class="managefleet">Manage Fleet</div>
-                <div class="divider"></div>
-                <div class="routes">Routes</div>
-                <div class="buses">Buses</div>
-            </div>
-
-            <div class="home-section">
-                <div class="icon"></div>
-                <div class="small-icon"></div>
-                <div class="home">Home</div>
-            </div>
-
-            <div class="admin">Admin Tools</div>
-
-            <div class="logout-section">
-                <div class="logout">Log out</div>
-                <div class="icon"></div>
-            </div>
+        <div class="home-section">
+            <img src="home.svg" alt="Home">
+            <div class="home">Home</div>
+            <i class="fas fa-chevron-right arrow"></i> <!-- Right arrow -->
         </div>
-    </body>
+
+        <div class="managefleet-section">
+            <img src="manage.svg" alt="Manage Fleet">
+            <div class="managefleet">Manage Fleet</div>
+            <i class="fas fa-chevron-down arrow"></i> <!-- Down arrow -->
+            <div class="divider"></div>
+            <div class="routes">Routes</div>
+            <div class="buses">Buses</div>
+        </div>
+
+        <div class="logout-section">
+            <img src="logout.svg" alt="Log Out">
+            <div class="logout">Log out</div>
+        </div>
+    </div>
+</body>
 </html>
