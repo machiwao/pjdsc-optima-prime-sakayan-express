@@ -239,3 +239,26 @@
     }
 })();
 // end: Dropdown
+
+document.addEventListener("DOMContentLoaded", function() {
+    const menuItems = document.querySelectorAll(".sidebar-menu-item-link");
+    const contentSections = document.querySelectorAll(".content-section");
+
+    menuItems.forEach(item => {
+        item.addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const targetId = this.getAttribute("data-target");
+
+            // Hide all content sections
+            contentSections.forEach(section => {
+                section.style.display = "none";
+            });
+
+            // Show the target content section
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                targetSection.style.display = "block";
+            }
+        });
+    });
+});
