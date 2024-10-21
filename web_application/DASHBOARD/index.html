@@ -12,80 +12,57 @@
     </head>
     <body>
         <!-- start: Sidebar -->
-        <div class="sidebar-overlay" data-dismiss="sidebar"></div>
-        <div class="sidebar">
-            <div class="sidebar-brand-wrapper">
-                <a href="#" class="sidebar-brand">
-                    <img
-                        src="icons\lto-logo.svg"
-                        alt=""
-                        class="sidebar-brand-image"
-                    />
-                    <span class="sidebar-brand-name">Sakayan Express</span>
+<div class="sidebar-overlay" data-dismiss="sidebar"></div>
+<div class="sidebar">
+    <div class="sidebar-brand-wrapper">
+        <a href="#" class="sidebar-brand">
+            <img src="icons/lto-logo.svg" alt="" class="sidebar-brand-image" />
+            <span class="sidebar-brand-name">Sakayan Express</span>
+        </a>
+    </div>
+    <div class="sidebar-menu-wrapper">
+        <ul class="sidebar-menu">
+            <li class="sidebar-menu-item-title">
+                <span class="sidebar-menu-item-title-expanded">Menu</span>
+                <span class="sidebar-menu-item-title-collapsed">
+                    <i class="ri-more-fill"></i>
+                </span>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item-link" data-target="home-content">
+                    <span class="sidebar-menu-item-link-icon"><i class="ri-dashboard-3-line"></i></span>
+                    <span class="sidebar-menu-item-link-text">Home</span>
                 </a>
-            </div>
-            <div class="sidebar-menu-wrapper">
-                <ul class="sidebar-menu">
-                    <li class="sidebar-menu-item-title">
-                        <span class="sidebar-menu-item-title-expanded"
-                            >Menu</span
-                        >
-                        <span class="sidebar-menu-item-title-collapsed">
-                            <i class="ri-more-fill"></i>
-                        </span>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="#" class="sidebar-menu-item-link">
-                            <span class="sidebar-menu-item-link-icon"
-                                ><i class="ri-dashboard-3-line"></i
-                            ></span>
-                            <span class="sidebar-menu-item-link-text"
-                                >Home</span>
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item-link" data-target="manage-fleet-content">
+                    <span class="sidebar-menu-item-link-icon"><i class="ri-apps-2-line"></i></span>
+                    <span class="sidebar-menu-item-link-text">Manage Fleet</span>
+                    <span class="sidebar-menu-item-link-arrow"><i class="ri-arrow-right-s-line"></i></span>
+                </a>
+                <ul class="sidebar-submenu">
+                    <li class="sidebar-submenu-item">
+                        <a href="#" class="sidebar-submenu-item-link">
+                            <span class="sidebar-submenu-item-link-text">Routes</span>
                         </a>
                     </li>
-                    <li class="sidebar-menu-item">
-                        <a href="#" class="sidebar-menu-item-link">
-                            <span class="sidebar-menu-item-link-icon"
-                                ><i class="ri-apps-2-line"></i
-                            ></span>
-                            <span class="sidebar-menu-item-link-text"
-                                >Manage Fleet</span>
-                            <span class="sidebar-menu-item-link-arrow"
-                                ><i class="ri-arrow-right-s-line"></i
-                            ></span>
-                        </a>
-                        <ul class="sidebar-submenu">
-                            <li class="sidebar-submenu-item">
-                                <a href="#" class="sidebar-submenu-item-link">
-                                    <span class="sidebar-submenu-item-link-text"
-                                        >Routes</span
-                                    >
-                                </a>
-                            </li>
-                            <li class="sidebar-submenu-item">
-                                <a href="#" class="sidebar-submenu-item-link">
-                                    <span class="sidebar-submenu-item-link-text"
-                                        >Buses</span
-                                    >
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="sidebar-menu-item">
-                        <a href="#" class="sidebar-menu-item-link">
-                            <span class="sidebar-menu-item-link-icon"
-                                ><i class="ri-dashboard-3-line"></i
-                            ></span>
-                            <span class="sidebar-menu-item-link-text"
-                                >Report</span
-                            >
+                    <li class="sidebar-submenu-item">
+                        <a href="#" class="sidebar-submenu-item-link">
+                            <span class="sidebar-submenu-item-link-text">Buses</span>
                         </a>
                     </li>
                 </ul>
-            </div>
-        </div>
-        <!-- end: Sidebar -->
-
+            </li>
+            <li class="sidebar-menu-item">
+                <a href="#" class="sidebar-menu-item-link" data-target="report-content">
+                    <span class="sidebar-menu-item-link-icon"><i class="ri-dashboard-3-line"></i></span>
+                    <span class="sidebar-menu-item-link-text">Report</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+<!-- end: Sidebar -->
         <!-- start: Main -->
         <div class="main">
             <div class="topbar">
@@ -347,13 +324,22 @@
             </div>
         <!-- Home Page -->
         <div class="content">
-            <h1 class="content-title">Home</h1>
-            <select id="options" name="options" onchange="handleSelection()">
-                <option value="">Location</option>
-            </select>
-            <div id="result"></div> <!-- Placeholder for displaying the result -->
-        </div> 
-        
+            <div id="home-content" class="content-section"> <!-- Home Content -->
+                <h1 class="content-title">Home</h1>
+                <select id="options" name="options" onchange="handleSelection()">
+                    <option value="">Location</option>
+                </select>
+                <div id="result"></div>
+            </div>
+            <div id="manage-fleet-content" class="content-section" style="display: none;"> <!-- Manage Fleet Content -->
+                <h1 class="content-title">Manage Fleet</h1>
+                <p>Details about managing the fleet go here.</p>
+            </div>
+            <div id="report-content" class="content-section" style="display: none;"> <!-- Report Content -->
+                <h1 class="content-title">Report</h1>
+                <p>Report details go here.</p>
+            </div>
+        </div>
         </div>
         <!-- end: Main -->
 
