@@ -13,7 +13,8 @@ h1 {
 
 img {
     display: block;
-    width: 90px;
+    width: 30px;
+    height: 30px;
     float: left;
 }
 
@@ -35,37 +36,48 @@ img {
     border: 1px solid black;
 }
 
-/* Reports section */
-.reports-section {
+/* Icon Styling */
+.icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.arrow {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    color: black;
+}
+
+/* Admin Tools section */
+.admin {
+    width: 131.60px;
+    position: absolute;
+    left: 22.35px;
+    top: 166px;
+    color: black;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+}
+
+/* Home section */
+.home-section {
     width: 197.54px;
     height: 30px;
     position: absolute;
     left: 27px;
-    top: 392px;
+    top: 200px;
 }
 
-.reports-section .icon {
-    width: 30px;
-    height: 30px;
+.home {
     position: absolute;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
-.reports-section .small-icon {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 177.54px;
-    top: 5px;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
-.reports {
-    width: 129px;
-    position: absolute;
-    left: 44px;
+    left: 50px;
     top: 3px;
     color: black;
     font-size: 16px;
@@ -82,28 +94,9 @@ img {
     top: 249px;
 }
 
-.managefleet-section .icon {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
-.managefleet-section .small-icon {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 177.54px;
-    top: 5px;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
 .managefleet {
-    width: 127.88px;
     position: absolute;
-    left: 43.58px;
+    left: 50px;
     top: 3px;
     color: black;
     font-size: 16px;
@@ -132,63 +125,13 @@ img {
 }
 
 .routes {
-    left: 33px;
+    left: 50px;
     top: 51px;
 }
 
 .buses {
-    left: 33px;
+    left: 50px;
     top: 93px;
-}
-
-/* Home section */
-.home-section {
-    width: 197.54px;
-    height: 30px;
-    position: absolute;
-    left: 27px;
-    top: 200px;
-}
-
-.home-section .icon {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
-.home-section .small-icon {
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    left: 177.54px;
-    top: 5px;
-    background-color: #D9D9D9;
-    border: 1px solid black;
-}
-
-.home {
-    width: 55.87px;
-    position: absolute;
-    left: 43.58px;
-    top: 3px;
-    color: black;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 24px;
-}
-
-/* Admin Tools section */
-.admin {
-    width: 131.60px;
-    position: absolute;
-    left: 22.35px;
-    top: 166px;
-    color: black;
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 24px;
 }
 
 /* Logout section */
@@ -201,20 +144,11 @@ img {
 }
 
 .logout {
-    width: 131.60px;
     position: absolute;
-    left: 44px;
+    left: 50px;
     top: 3px;
     color: black;
     font-size: 16px;
     font-weight: 500;
     line-height: 24px;
-}
-
-.logout-section .icon {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    background-color: #D9D9D9;
-    border: 1px solid black;
 }
