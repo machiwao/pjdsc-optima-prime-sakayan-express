@@ -717,7 +717,7 @@ body.sidebar-collapsed .main {
     padding: 16px;
 }
 .content-title {
-    font-size: 24px;
+    font-size: 52px;
     font-weight: 700;
     line-height: 1.2;
 }
@@ -955,4 +955,20 @@ body.sidebar-collapsed .main {
         max-width: calc(100% - 32px);
     }
 }
+
+body {
+    background-color: lightgray;
+}
+.content {
+    margin: 20px;
+}
+
+select {
+    width: 200px;
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
 /* end: Breakpoints */
