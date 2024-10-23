@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 1200px;
+            height: 900px;
+            margin: 0 auto;
+            border: 5px solid #ccc; /* Simulating JFrame border */
+            background-color: white;
+            position: relative;
+            overflow: hidden; /* Prevent overflow */
+        }
+        .header {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding-left: 32px;
+        }
+        .combo-box {
+            width: 155px;
+            height: 28px;
+            margin: 10px 0;
+            display: block;
+            padding-left: 32px;
+        }
+        .insights-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            position: absolute;
+            top: 110px;
+            left: 32px;
+            width: 789px;
+            height: 306px;
+            padding: 10px;
+            box-sizing: border-box;
+            overflow: auto; /* Allow scrolling if content overflows */
+        }
+        .info-panel {
+            width: 250px;
+            background-color: #e9ecef; /* Light gray background */
+            margin: 10px; /* Adjusted margins */
+            padding: 10px;
+            border: 1px solid #ccc;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+        }
+        .info-panel p {
+            margin: 5px 0; /* Added spacing between lines */
+        }
+        .map-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 1120px;
+            height: 380px;
+            position: absolute;
+            top: 440px;
+            left: 32px;
+            margin-top: 20px;
+        }
+        .fleet-overview {
+            font-size: 20px;
+            margin: 10px 0;
+            padding-left: 10px;
+        }
+        .updates-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            position: absolute;
+            top: 110px;
+            left: 831px;
+            width: 321px;
+            height: 306px;
+            box-sizing: border-box;
+            overflow: auto; /* Allow scrolling if content overflows */
+        }
+        .bus-detail {
+            margin-bottom: 10px;
+        }
+        .date-time-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            width: 321px;
+            height: 50px;
+            position: absolute;
+            top: 38px;
+            right: 32px;
+            padding: 10px; /* Add padding for aesthetics */
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Home</div>
+        <select class="combo-box">
+            <option value="">Select Location</option>
+            <!-- Additional options can be added here -->
+        </select>
+
+        <div class="insights-panel">
+            <div class="info-panel">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+            <div class="info-panel">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+            <div class="info-panel">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+            <div style="width: 760px; height: 180px; background-color: #e9ecef; margin-top: 20px;"></div>
+        </div>
+
+        <div class="updates-panel">
+            <div class="fleet-overview">Fleet Overview</div>
+            <div class="info-panel bus-detail">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+            <div class="info-panel bus-detail">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+            <div class="info-panel bus-detail">
+                <p><strong>Bus Model and Plate Number</strong></p>
+                <p>Driver's Name</p>
+                <p>Current Location</p>
+                <p>ETA: Time of Arrival</p>
+            </div>
+        </div>
+
+        <div class="map-panel"></div>
+        <div class="date-time-panel"></div>
+    </div>
+</body>
+</html>
