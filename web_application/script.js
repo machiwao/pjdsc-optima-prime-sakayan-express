@@ -1,291 +1,80 @@
-"use strict";
-
-// start: Sidebar
-(function () {
-    let cleanup;
-    document
-        .querySelectorAll(".sidebar-menu-item, .sidebar-submenu-item")
-        .forEach(function (item) {
-            const submenu = item.querySelector(".sidebar-submenu");
-            if (submenu) {
-                const link = item.querySelector(
-                    ".sidebar-menu-item-link, .sidebar-submenu-item-link"
-                );
-                if (link) {
-                    link.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        let siblings = Array.from(item.parentElement.children);
-                        if (item.classList.contains("sidebar-menu-item")) {
-                            siblings =
-                                document.querySelectorAll(".sidebar-menu-item");
-                        }
-                        siblings.forEach(function (el) {
-                            el.classList.toggle(
-                                "active",
-                                el === item &&
-                                    !item.classList.contains("active")
-                            );
-                        });
-                        if (item.classList.contains("sidebar-menu-item")) {
-                            document.body.classList.remove("sidebar-collapsed");
-                        }
-                    });
-                    if (item.classList.contains("sidebar-menu-item")) {
-                        item.addEventListener("mouseenter", function () {
-                            cleanup && cleanup();
-                            cleanup = window.FloatingUIDOM.autoUpdate(
-                                item,
-                                submenu,
-                                function () {
-                                    updateFloatingSidebarSubmenu(item, submenu);
-                                }
-                            );
-                        });
-                    }
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+    const ctx = document.getElementById('active-buses-doughnut').getContext('2d');
+    const myDoughnutChart = new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+            labels: ['Active', 'Inactive'],
+            datasets: [{
+                label: 'Buses',
+                data: [12, 19], // Replace with your actual data
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(255, 99, 132, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top',
+                },
+                title: {
+                    display: true,
+                    text: 'Active Buses'
                 }
             }
-        });
-    document
-        .querySelectorAll('[data-toggle="sidebar"]')
-        .forEach(function (item) {
-            item.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.body.classList.toggle("sidebar-collapsed");
-                document.body.classList.toggle("sidebar-mobile-shown");
-                document
-                    .querySelectorAll(
-                        ".sidebar-menu-item, .sidebar-submenu-item"
-                    )
-                    .forEach(function (el) {
-                        el.classList.remove("active");
-                    });
-            });
-        });
-    document
-        .querySelectorAll('[data-dismiss="sidebar"]')
-        .forEach(function (item) {
-            item.addEventListener("click", function (e) {
-                e.preventDefault();
-                document.body.classList.remove("sidebar-collapsed");
-                document.body.classList.remove("sidebar-mobile-shown");
-                document
-                    .querySelectorAll(
-                        ".sidebar-menu-item, .sidebar-submenu-item"
-                    )
-                    .forEach(function (el) {
-                        el.classList.remove("active");
-                    });
-            });
-        });
-
-    function updateFloatingSidebarSubmenu(item, submenu) {
-        window.FloatingUIDOM.computePosition(item, submenu, {
-            placement: "right-start",
-            middleware: [
-                window.FloatingUIDOM.shift({
-                    padding: 16,
-                }),
-            ],
-        }).then(function ({ x, y }) {
-            Object.assign(submenu.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
-        });
-    }
-})();
-// end: Sidebar
-
-// start: Language
-(function () {
-    const dropdown = document.getElementById("topbar-language-dropdown");
-    if (dropdown) {
-        const image = dropdown.querySelector(".topbar-language-image");
-        if (image) {
-            dropdown
-                .querySelectorAll("[data-language-image]")
-                .forEach(function (item) {
-                    item.addEventListener("click", function (e) {
-                        e.preventDefault();
-                        image.src = item.dataset.languageImage;
-                        dropdown.classList.remove("active");
-                    });
-                });
-        }
-    }
-})();
-// end: Language
-
-// start: Topbar Search
-(function () {
-    let cleanup;
-    const input = document.getElementById("topbar-search-input");
-    const autocomplete = document.getElementById("topbar-search-autocomplete");
-    const clear = document.getElementById("topbar-search-clear");
-    const wrapper = document.getElementById("topbar-search-form-wrapper");
-    if (input && autocomplete && clear) {
-        input.addEventListener("input", function () {
-            autocomplete.classList.toggle("active", input.value);
-            clear.classList.toggle("active", input.value);
-            cleanup && cleanup();
-            cleanup = window.FloatingUIDOM.autoUpdate(
-                input,
-                autocomplete,
-                function () {
-                    updateAutocomplete(input, autocomplete);
-                }
-            );
-        });
-        clear.addEventListener("click", function (e) {
-            e.preventDefault();
-            input.value = "";
-            input.dispatchEvent(new Event("input"));
-            input.focus();
-        });
-    }
-    if (wrapper) {
-        document
-            .querySelectorAll('[data-toggle="topbar-search"]')
-            .forEach(function (item) {
-                item.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    wrapper.classList.add("active");
-                    input.focus();
-                });
-            });
-        document
-            .querySelectorAll('[data-dismiss="topbar-search"]')
-            .forEach(function (item) {
-                item.addEventListener("click", function (e) {
-                    e.preventDefault();
-                    wrapper.classList.remove("active");
-                });
-            });
-    }
-    document.addEventListener("click", function (e) {
-        const form = e.target.closest(".topbar-search-form");
-        if (!form && autocomplete) {
-            autocomplete.classList.remove("active");
         }
     });
-
-    function updateAutocomplete(item, submenu) {
-        window.FloatingUIDOM.computePosition(item, submenu, {
-            placement: "bottom-start",
-            middleware: [
-                window.FloatingUIDOM.shift({
-                    padding: 16,
-                }),
-                window.FloatingUIDOM.offset(8),
-            ],
-        }).then(function ({ x, y }) {
-            Object.assign(submenu.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
-        });
-    }
-})();
-// end: Topbar Search
-
-// start: Dropdown
-(function () {
-    let cleanup;
-    document.addEventListener("click", function (e) {
-        const dropdownToggle = e.target.closest('[data-toggle="dropdown"]');
-        const dropdown = e.target.closest(".dropdown");
-        if (dropdown && dropdownToggle) {
-            const dropdownMenu = dropdown.querySelector(".dropdown-menu");
-            if (dropdownMenu) {
-                e.preventDefault();
-                document.querySelectorAll(".dropdown").forEach(function (el) {
-                    el.classList.toggle(
-                        "active",
-                        el === dropdown &&
-                            !dropdown.classList.contains("active")
-                    );
-                });
-                cleanup && cleanup();
-                cleanup = window.FloatingUIDOM.autoUpdate(
-                    dropdownToggle,
-                    dropdownMenu,
-                    function () {
-                        updateDropdown(dropdownToggle, dropdownMenu);
-                    }
-                );
-            }
-        } else {
-            document.querySelectorAll(".dropdown").forEach(function (el) {
-                el.classList.remove("active");
-            });
-        }
-    });
-
-    function updateDropdown(item, submenu) {
-        window.FloatingUIDOM.computePosition(item, submenu, {
-            placement: "bottom-end",
-            middleware: [
-                window.FloatingUIDOM.shift({
-                    padding: 16,
-                }),
-                window.FloatingUIDOM.offset(8),
-            ],
-        }).then(function ({ x, y }) {
-            Object.assign(submenu.style, {
-                left: `${x}px`,
-                top: `${y}px`,
-            });
-        });
-    }
-})();
-// end: Dropdown
-
-document.addEventListener("DOMContentLoaded", function() {
-    const menuItems = document.querySelectorAll(".sidebar-menu-item-link, .sidebar-submenu-item-link");
-    const contentSections = document.querySelectorAll(".content-section");
-
-    menuItems.forEach(item => {
-        item.addEventListener("click", function(event) {
-            event.preventDefault(); // Prevent default link behavior
-            const targetId = this.getAttribute("data-target");
-
-            // Hide all content sections
-            contentSections.forEach(section => {
-                section.style.display = "none";
-            });
-
-            // Show the target content section
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                targetSection.style.display = "block";
-            }
-        });
-    });
-
-    function updateDateTime() {
-        let timeElements = document.querySelectorAll(".current-time");
-        let dateElements = document.querySelectorAll(".current-date");
-        
-        let now = new Date();
-        
-        // Update all time elements
-        timeElements.forEach(timeElement => {
-            timeElement.innerHTML = now.toLocaleTimeString();
-        });
-        
-        // Update all date elements
-        dateElements.forEach(dateElement => {
-            let options = { 
-                weekday: 'long', 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-            };
-            dateElement.innerHTML = now.toLocaleDateString('en-US', options);
-        });
-    }
-
-    // Update date and time immediately and then every second
-    updateDateTime();
-    setInterval(updateDateTime, 1000);
 });
+
+let chart; // Global variable for the chart instance
+
+function createChart() {
+    const ctx = document.getElementById('demand-chart').getContext('2d');
+    const data = {
+        labels: ['Stop 1', 'Stop 2', 'Stop 3', 'Stop 4', 'Stop 5'], // Define your labels
+        datasets: [{
+            label: 'Passenger Demand',
+            data: [12, 19, 3, 5, 2], // Example data
+            backgroundColor: 'rgba(54, 162, 235, 0.5)', // Bar color
+            borderColor: 'rgba(54, 162, 235, 1)', // Border color
+            borderWidth: 1
+        }]
+    };
+
+    // Destroy previous chart instance if it exists
+    if (chart) {
+        chart.destroy(); 
+    }
+
+    // Create new chart instance
+    chart = new Chart(ctx, {
+        type: 'bar', // Fixed to bar chart
+        data: data,
+        options: {
+            responsive: true, // Enable responsiveness
+            maintainAspectRatio: false, // Allows setting absolute size
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false // Show all x-axis labels
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Initial chart creation
+createChart();
