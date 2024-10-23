@@ -1105,4 +1105,165 @@ th, td {
     justify-content: center;
 }
 
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1, h2, h3 {
+    color: #333;
+}
+
+/* Home Content Section */
+#home-content {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.content-title {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #2a9d8f;
+}
+
+/* Dropdown */
+select {
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    font-size: 16px;
+    border: 2px solid #2a9d8f;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+/* Fleet Status Cards */
+.fleet-status {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.status-card {
+    flex: 1;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-right: 10px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.status-card h3 {
+    color: #264653;
+    font-size: 1.2rem;
+}
+
+.status-card p {
+    font-size: 2rem;
+    color: #e76f51;
+}
+
+.status-card:last-child {
+    margin-right: 0;
+}
+
+/* Scrollable Table */
+.upcoming-buses {
+    margin-top: 40px;
+}
+
+#upcoming-buses-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#upcoming-buses-table th, #upcoming-buses-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#upcoming-buses-table th {
+    background-color: #2a9d8f;
+    color: white;
+    font-size: 1.1rem;
+}
+
+#upcoming-buses-table td {
+    font-size: 1rem;
+}
+
+/* Scroll only the table body */
+.table-wrapper {
+    max-height: 250px; /* Set desired max height */
+    overflow-y: auto;  /* Enable vertical scroll */
+}
+
+.table-wrapper table {
+    width: 100%;
+}
+
+/* Sticky header to keep the title fixed while scrolling */
+#upcoming-buses-table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background-color: #2a9d8f; /* Same color as header */
+}
+
+/* Passenger Demand Chart */
+.passenger-demand-chart {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+canvas {
+    width: 100% !important;
+    max-width: 600px;
+    height: auto !important;
+}
+
+#chart-container {
+    width: 100%; /* Full width of the parent */
+    height: 400px; /* Fixed height for the chart */
+}
+
+#demand-chart {
+    width: 100% !important; /* Make the canvas fill the container width */
+    height: 100% !important; /* Make the canvas fill the container height */
+}
+
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .fleet-status {
+        flex-direction: column;
+    }
+
+    .status-card {
+        margin-bottom: 10px;
+    }
+
+    .status-card:last-child {
+        margin-right: 0;
+    }
+}
+
+
 /* end: Breakpoints */
