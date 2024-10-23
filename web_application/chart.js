@@ -33,3 +33,48 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 });
+
+let chart; // Global variable for the chart instance
+
+function createChart() {
+    const ctx = document.getElementById('demand-chart').getContext('2d');
+    const data = {
+        labels: ['Stop 1', 'Stop 2', 'Stop 3', 'Stop 4', 'Stop 5'], // Define your labels
+        datasets: [{
+            label: 'Passenger Demand',
+            data: [12, 19, 3, 5, 2], // Example data
+            backgroundColor: 'rgba(54, 162, 235, 0.5)', // Bar color
+            borderColor: 'rgba(54, 162, 235, 1)', // Border color
+            borderWidth: 1
+        }]
+    };
+
+    // Destroy previous chart instance if it exists
+    if (chart) {
+        chart.destroy(); 
+    }
+
+    // Create new chart instance
+    chart = new Chart(ctx, {
+        type: 'bar', // Fixed to bar chart
+        data: data,
+        options: {
+            responsive: true, // Enable responsiveness
+            maintainAspectRatio: false, // Allows setting absolute size
+            scales: {
+                x: {
+                    beginAtZero: true,
+                    ticks: {
+                        autoSkip: false // Show all x-axis labels
+                    }
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+// Initial chart creation
+createChart();
