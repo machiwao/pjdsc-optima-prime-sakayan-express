@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report</title>
+    <style>
+        body {
+            font-family: 'Tahoma', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Light background for contrast */
+        }
+        .container {
+            width: 1200px;
+            margin: 20px auto; /* Centering the container */
+            padding: 5px;
+            background-color: white; /* Container background */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+        }
+        .header {
+            font-size: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+            padding-left: 32px; /* Align with Java layout */
+        }
+        .combo-box {
+            width: 155px;
+            margin: 10px 32px; /* Align combo box with header */
+        }
+        .flex-container {
+            display: flex; /* Using flexbox for layout */
+            justify-content: space-between; /* Space out the items */
+        }
+        .insights-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 789px; /* Width matching Java panel */
+            box-sizing: border-box; /* Ensure padding doesn't affect total width */
+            margin-right: 10px; /* Space between panels */
+        }
+        .updates-panel {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 321px; /* Width matching Java panel */
+            box-sizing: border-box; /* Ensure padding doesn't affect total width */
+        }
+        .bus-detail {
+            border: 1px solid #ccc;
+            margin: 10px 0; /* Margin between bus detail items */
+            padding: 10px;
+        }
+        .bus-detail h4 {
+            font-size: 12px;
+            font-weight: bold;
+            margin: 0;
+        }
+        .bus-detail p {
+            font-size: 10px;
+            margin: 5px 0; /* Margin between paragraphs */
+        }
+        .map {
+            background-color: #e0e0e0; /* Light grey for the map */
+            width: 100%; /* Fill the container */
+            height: 380px; /* Fixed height for map */
+            margin: 20px 0; /* Margin above and below the map */
+            border: 1px solid #ccc; /* Border for the map */
+        }
+        .date-time-panel {
+            background-color: white;
+            width: 321px; /* Width matching Java panel */
+            height: 50px; /* Height matching Java panel */
+            margin-left: 10px; /* Align with updates panel */
+            border: 1px solid #ccc; /* Border for date-time panel */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">Home</div>
+        <select class="combo-box">
+            <option>Select Location</option>
+            <!-- Add options as needed -->
+        </select>
+        
+        <div class="flex-container">
+            <div class="insights-panel">
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+                <div class="map">Map will be displayed here</div>
+            </div>
+            
+            <div class="updates-panel">
+                <div class="header" style="font-size: 20px;">Fleet Overview</div>
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+                <div class="bus-detail">
+                    <h4>Bus Model and Plate Number</h4>
+                    <p>Driver's Name</p>
+                    <p>Current Location</p>
+                    <p>ETA: Time of Arrival</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="date-time-panel"></div>
+    </div>
+</body>
+</html>
