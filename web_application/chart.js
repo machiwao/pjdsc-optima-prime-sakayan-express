@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         options: {
             responsive: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'top',
@@ -39,10 +40,12 @@ let chart; // Global variable for the chart instance
 function createChart() {
     const ctx = document.getElementById('demand-chart').getContext('2d');
     const data = {
-        labels: ['Stop 1', 'Stop 2', 'Stop 3', 'Stop 4', 'Stop 5'], // Define your labels
+        labels: ['Stop 1', 'Stop 2', 'Stop 3', 'Stop 4', 'Stop 5', 'Stop 6', 'Stop 7', 'Stop 8', 'Stop 9', 'Stop 10',
+            'Stop 11', 'Stop 12', 'Stop 13', 'Stop 14', 'Stop 15', 'Stop 16', 'Stop 17', 'Stop 18', 'Stop 19', 'Stop 20',
+            'Stop 21', 'Stop 22', 'Stop 23'], // Define your labels
         datasets: [{
-            label: 'Passenger Demand',
-            data: [12, 19, 3, 5, 2], // Example data
+            label: 'Waiting Demand (Minute)',
+            data: [12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3, 5, 2, 12, 19, 3], // Example data
             backgroundColor: 'rgba(54, 162, 235, 0.5)', // Bar color
             borderColor: 'rgba(54, 162, 235, 1)', // Border color
             borderWidth: 1
