@@ -1265,5 +1265,45 @@ canvas {
     }
 }
 
+.run-simulation, .run-optimized {
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Green background */
+    color: white;             /* White text */
+    border: none;
+    border-radius: 5px;       /* Rounded corners */
+    cursor: pointer;          /* Hand cursor on hover */
+    font-size: 14px;
+    margin-top: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Hover effect */
+.run-simulation:hover, .run-optimized:hover {
+    background-color: #45a049;
+}
+
+/* Active/Click effect */
+.run-simulation:active, .run-optimized:hover {
+    background-color: #3d8b40;
+}
+
+.custom-layers-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: white;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border: 1px solid #000;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+
+.custom-layers-button:hover {
+    background-color: #f0f0f0;
+}
 
 /* end: Breakpoints */
