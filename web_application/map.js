@@ -35,7 +35,7 @@ var fleetData = {};
 function generateRandomData() {
     stations.forEach(station => {
         demandData[station.name] = Math.floor(Math.random() * 251) + 50; // Demand: 50 to 300
-        fleetData[station.name] = Math.floor(Math.random() * 15) + 1;    // Fleet: 1 to 15
+        fleetData[station.name] = Math.floor(Math.random() * 5) + 1;    // Fleet: 1 to 15
     });
 }
 
@@ -52,7 +52,7 @@ function updateMarkers() {
     stations.forEach(function(station) {
         var demand = demandData[station.name] || 0;
         var fleet = fleetData[station.name] || 0;
-        var utilizationRatio = fleet / (demand / 50);
+        var utilizationRatio = fleet / (demand / 80);
         var markerColor;
 
         // Determine marker color based on utilization ratio
