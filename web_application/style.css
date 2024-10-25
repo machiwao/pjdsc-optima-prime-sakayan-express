@@ -1081,7 +1081,7 @@ th, td {
 
 .date-and-time {
     width: 200px;
-    height: 100px;
+    height: 80px;
     background-color: #FFFFFF;
     display: flex;
     flex-direction: column; /* Stack date and time vertically */
@@ -1090,20 +1090,20 @@ th, td {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     position: absolute;
-    top: 75px;
-    right: 65px;
+    top: 70px;
+    right: 155px;
 }
 
 .current-date {
     font-style: "Poppins";
-    font-size: 13px;
+    font-size: 15px;
     margin-bottom: 5px; /* Add space between date and time */
     color: #666; /* Slightly muted color for the date */
 }
 
 .current-time {
     font-style: "Poppins";
-    font-size: 35px;
+    font-size: 32px;
     justify-content: center;
 }
 
