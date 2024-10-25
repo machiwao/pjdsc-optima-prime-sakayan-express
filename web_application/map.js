@@ -1,4 +1,4 @@
-var mymap = L.map('EDSA Bus Map').setView([14.587134469805761, 121.05639025496566], 12.2); // Adjust center coordinates and zoom level
+var mymap = L.map('EDSA Bus Map').setView([14.58651818442125, 121.01333429254092], 12); // Adjust center coordinates and zoom level
 
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
