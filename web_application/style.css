@@ -1235,9 +1235,9 @@ select {
 }
 
 canvas {
-    width: 100% !important;
-    max-width: 600px;
-    height: auto !important;
+    display: block; /* Ensure the canvas behaves like a block element */
+    width: 100% !important; /* Make the canvas fill the container width */
+    height: auto !important; /* Maintain aspect ratio */
 }
 
 #chart-container {
@@ -1249,7 +1249,6 @@ canvas {
     width: 100% !important; /* Make the canvas fill the container width */
     height: 100% !important; /* Make the canvas fill the container height */
 }
-
 
 
 /* Responsive Layout */
